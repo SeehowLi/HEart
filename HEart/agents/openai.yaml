@@ -1,0 +1,7 @@
+interface:
+  display_name: "HEart"
+  short_description: "CKKS/FHE design and code guidance for OpenFHE, Lattigo, and FlyHE."
+  default_prompt: "Use $HEart target=OpenFHE to design a CKKS circuit with a Design Note before code."
+
+policy:
+  allow_implicit_invocation: true

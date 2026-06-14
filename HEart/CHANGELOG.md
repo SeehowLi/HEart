@@ -31,6 +31,7 @@ Release checks:
 - `SKILL.md` frontmatter version is `"1.0"`.
 - `VALIDATION.md` records reference/link/operator consistency checks.
 - `_selftest/REPORT.md` records end-to-end self-test status and gate-hardening follow-up.
+- v1.0 invocation interface accepts `$HEart target=OpenFHE`, `$HEart target=Lattigo`, `$HEart target=FlyHE`, and `$HEart target=flyfhe`.
 
 ## v1.0 Draft History - 2026-06-14
 

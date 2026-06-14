@@ -47,6 +47,25 @@ Attach or install the `HEart/` directory as a Codex skill. Trigger it with CKKS/
 
 If the target library is ambiguous, the skill should ask one short target-selection question before loading library-specific guidance.
 
+## Target Interface
+
+Call the skill explicitly with `$HEart` and choose the library target in the prompt:
+
+```text
+$HEart target=OpenFHE ...
+$HEart target=Lattigo ...
+$HEart target=FlyHE ...
+$HEart target=flyfhe ...
+```
+
+Target aliases:
+
+- `target=OpenFHE`: OpenFHE 1.5.1 / CPU / C++.
+- `target=Lattigo`: Lattigo 6.2.0 / CPU / Go.
+- `target=FlyHE`, `target=flyfhe`, `target=Phantom`, or `target=GPU`: Phantom/FlyHE GPU.
+
+If no target is specified and the context does not make it obvious, HEart should ask one short target-selection question before proceeding.
+
 ## Minimal Example
 
 User:

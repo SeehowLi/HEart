@@ -10,11 +10,33 @@ description: Use when writing, reviewing, debugging, or designing fully homomorp
   (sign, comparison, ReLU, sigmoid, 1/x, sqrt), CKKS bootstrapping placement, GPU
   device-memory and host-device-transfer concerns, and validating approximate results
   against a plaintext reference. Trigger on CKKS, RNS-CKKS, FHE, homomorphic
-  encryption, ciphertext, EvalMult/Rescale/Rotate, bootstrap, OpenFHE, Lattigo,
-  Phantom, FlyHE, GPU FHE, 全同态加密, 同态加密, 隐私计算, 加密推理, CKKS 方案.
+  encryption, ciphertext, EvalMult/Rescale/Rotate, bootstrap, target=OpenFHE,
+  target=Lattigo, target=FlyHE, target=flyfhe, OpenFHE, Lattigo, Phantom, FlyHE,
+  GPU FHE, 全同态加密, 同态加密, 隐私计算, 加密推理, CKKS 方案.
 ---
 
 ## Target Selection(路由)
+
+## Invocation Interface
+
+Use this skill explicitly as `$HEart` when the user wants FHE/CKKS design, code,
+review, or debugging help. The caller may select the library with a short target
+field in the prompt. Treat this as the stable v1.0 interface:
+
+```text
+$HEart target=OpenFHE ...
+$HEart target=Lattigo ...
+$HEart target=FlyHE ...
+$HEart target=flyfhe ...
+```
+
+Accepted target aliases:
+
+- `OpenFHE`, `openfhe`, `OpenFHE 1.5.1`: route to OpenFHE 1.5.1 / CPU / C++ and load `references/libs/openfhe.md`.
+- `Lattigo`, `lattigo`, `Lattigo 6.2.0`: route to Lattigo 6.2.0 / CPU / Go and load `references/libs/lattigo.md`.
+- `FlyHE`, `flyhe`, `flyfhe`, `Phantom`, `GPU`: route to Phantom/FlyHE GPU and load `references/libs/phantom-flyhe.md` plus `references/core/gpu-considerations.md`.
+
+If the prompt omits the target, apply the ambiguity gate below.
 
 First route the task:
 

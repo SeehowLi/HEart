@@ -420,3 +420,22 @@ Remaining / uncertain:
 
 遗留/不确定点:
 - 本次未改动 `v1.0` tag；这是 v1.0 发布后的 README 文档补充提交。
+
+## 2026-06-14 - HEart local install interface
+
+完成步骤:
+- 恢复并确认 `HEart/SKILL.md` frontmatter `version: "1.0"`。
+- 在 `HEart/SKILL.md` description 与 Invocation Interface 中明确稳定调用接口: `$HEart target=OpenFHE`, `$HEart target=Lattigo`, `$HEart target=FlyHE`, `$HEart target=flyfhe`。
+- 在根目录 `README.md` 新增 `Target Interface`，说明 OpenFHE/Lattigo/FlyHE(flyfhe) 三类目标别名。
+- 将 `HEart/agents/openai.yaml` 纳入 skill 目录，提供 UI metadata 和默认 prompt。
+- 安装 HEart skill 到本机 Codex skills 目录，便于重启 Codex 后直接调用。
+
+产出文件清单:
+- HEart/SKILL.md
+- HEart/agents/openai.yaml
+- README.md
+- HEart/CHANGELOG.md
+- PROGRESS.md
+
+遗留/不确定点:
+- Codex 需要重启后才能加载新安装的 skill。
