@@ -161,6 +161,14 @@ Project extension entrypoint:
 - End-to-end self-test report: see `HEart/_selftest/REPORT.md`.
 - Future work: see `HEart/ROADMAP.md`.
 
+## Star History
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=SeehowLi/HEart&type=Date&theme=dark" />
+  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=SeehowLi/HEart&type=Date" />
+  <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=SeehowLi/HEart&type=Date" />
+</picture>
+
 ## Notes
 
 - OpenFHE and Lattigo version claims are pinned to local source versions used during distillation.

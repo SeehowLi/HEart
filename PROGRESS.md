@@ -462,3 +462,17 @@ Output files:
 
 Remaining / uncertain:
 - This implements file-based project memory. No MCP server or external Codex Memories integration was implemented in this step.
+
+## 2026-06-14 - README Star History added
+
+完成步骤:
+- 在根目录 `README.md` 的 `Status` 后新增 `Star History` 小节。
+- 使用 `https://api.star-history.com/svg?repos=SeehowLi/HEart&type=Date` 嵌入 Star History 图表，并提供深色主题 source。
+- 检查 Markdown 相对链接并推送到 GitHub。
+
+产出文件清单:
+- README.md
+- PROGRESS.md
+
+遗留/不确定点:
+- Star History 图表由外部服务 `api.star-history.com` 渲染，显示效果依赖该服务可用性。
