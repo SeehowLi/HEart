@@ -1,0 +1,16 @@
+# Local upstream source trees; read-only inputs, not release payload.
+/openfhe-development-1.5.1/
+/lattigo-6.2.0/
+/FlyHE-main/
+
+# Downloaded papers and extracted text; local research inputs.
+/papers/
+
+# Build/cache artifacts.
+/.vs/
+/.vscode/
+/.idea/
+__pycache__/
+*.pyc
+*.log
+*.tmp
