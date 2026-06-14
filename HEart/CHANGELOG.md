@@ -43,3 +43,9 @@ Release checks:
 - Added validation/audit notes, corrected the unresolved Phantom/FlyHE version claim, and aligned OpenFHE's operation table with core `Conjugate` terminology.
 - Hardened the target-selection and Design Note gates after self-test failure: ambiguous targets now require one question and stop, and implementation/file writes require user confirmation after the visible Design Note.
 - Added self-test isolation and reference-load observability guidance for future HEart validation runs.
+
+## Post-v1.0 Updates - 2026-06-14
+
+- Added the target invocation interface for `$HEart target=OpenFHE`, `$HEart target=Lattigo`, `$HEart target=FlyHE`, and `$HEart target=flyfhe`.
+- Added the project-local Delegate Memory Module: concrete projects use `.heart-memory/` for project identity, project rules, session logs, decisions, artifacts, and open questions.
+- Added `scripts/init-heart-memory.ps1` to initialize the memory folder structure.

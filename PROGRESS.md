@@ -439,3 +439,26 @@ Remaining / uncertain:
 
 遗留/不确定点:
 - Codex 需要重启后才能加载新安装的 skill。
+
+## 2026-06-14 - HEart Delegate Memory Module
+
+Completed steps:
+- Added a HEart Delegate Memory Module: when HEart accepts a concrete project, initialize or update `.heart-memory/` in that project root.
+- Defined `.heart-memory/project.md` for basic project info: slug, target library, summary, scope, I/O, dynamic range, and references.
+- Defined `.heart-memory/rules.md` for project-specific standing rules and constraints.
+- Kept `.heart-memory/README.md`, `sessions/YYYY-MM-DD.md`, `decisions.md`, `artifacts.md`, and `open-questions.md` as live project memory files.
+- Added `HEart/scripts/init-heart-memory.ps1` with `-ProjectRoot`, `-ProjectSlug`, `-TargetLibrary`, and `-ProjectSummary` parameters.
+- Updated `HEart/SKILL.md` Invocation Interface, Mandatory Workflow, and Self-Check to require project memory updates during concrete project work.
+- Updated `README.md`, `HEart/CHANGELOG.md`, and `HEart/references/projects/README.md` with the Delegate Memory Module interface and rules.
+- Smoke-tested the script under `HEart/_selftest/memory-bridge-smoke/`, then removed the temporary test directory.
+
+Output files:
+- HEart/SKILL.md
+- HEart/scripts/init-heart-memory.ps1
+- HEart/references/projects/README.md
+- README.md
+- HEart/CHANGELOG.md
+- PROGRESS.md
+
+Remaining / uncertain:
+- This implements file-based project memory. No MCP server or external Codex Memories integration was implemented in this step.

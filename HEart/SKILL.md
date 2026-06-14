@@ -21,13 +21,13 @@ description: Use when writing, reviewing, debugging, or designing fully homomorp
 
 Use this skill explicitly as `$HEart` when the user wants FHE/CKKS design, code,
 review, or debugging help. The caller may select the library with a short target
-field in the prompt. Treat this as the stable v1.0 interface:
+field and optional project slug in the prompt. Treat this as the stable v1.0 interface:
 
 ```text
-$HEart target=OpenFHE ...
-$HEart target=Lattigo ...
-$HEart target=FlyHE ...
-$HEart target=flyfhe ...
+$HEart target=OpenFHE project=<slug> ...
+$HEart target=Lattigo project=<slug> ...
+$HEart target=FlyHE project=<slug> ...
+$HEart target=flyfhe project=<slug> ...
 ```
 
 Accepted target aliases:
@@ -37,6 +37,21 @@ Accepted target aliases:
 - `FlyHE`, `flyhe`, `flyfhe`, `Phantom`, `GPU`: route to Phantom/FlyHE GPU and load `references/libs/phantom-flyhe.md` plus `references/core/gpu-considerations.md`.
 
 If the prompt omits the target, apply the ambiguity gate below.
+
+## Delegate Memory Module
+
+For every new concrete project that uses HEart, create or update a project-local delegate memory folder at `.heart-memory/` in that project's root. This is the project's live memory, separate from HEart's reusable core/libs.
+
+Required files:
+
+- `.heart-memory/project.md`: project slug, target library, scope, inputs/outputs, dynamic-range assumptions, source references.
+- `.heart-memory/rules.md`: project-specific rules, constraints, and "do not" items.
+- `.heart-memory/sessions/YYYY-MM-DD.md`: append-only session log.
+- `.heart-memory/decisions.md`: durable decisions and rationale.
+- `.heart-memory/artifacts.md`: files created/modified and why.
+- `.heart-memory/open-questions.md`: unresolved facts, marked `[需人工确认]` when needed.
+
+Initialize it with `scripts/init-heart-memory.ps1 -ProjectRoot <path> -ProjectSlug <slug> -TargetLibrary <OpenFHE|Lattigo|FlyHE> -ProjectSummary "<summary>"` when the script is available. If not, create the same files manually. Update memory continuously during work and before returning.
 
 First route the task:
 
@@ -59,6 +74,8 @@ Load references:
 
 Before writing any CKKS code or reviewing a CKKS implementation:
 
+When HEart accepts a concrete project, initialize or update the Delegate Memory Module before implementation work. Record project basics, rules, decisions, modified artifacts, open questions, and validation results there throughout the session. This memory is project-local and must not be written back into HEart core/libs unless the user explicitly asks for a reusable skill update.
+
 Steps 1-5 must be written out as a short **Design Note** and shown to the user as the next user-visible artifact BEFORE any code or durable file creation. After showing the Design Note, wait for user confirmation before creating/editing code, examples, project notes, or registry entries, unless the user explicitly requested "write the Design Note to a file now" or has already approved implementation in the same request. If depth/precision/security do not fit, iterate the note first.
 
 1. Restate `f`: input/output shapes and dynamic range.
@@ -78,6 +95,8 @@ For self-test scoring only, include a short `Loaded HEart references:` line that
 
 ## Self-Check Before Returning
 
+- Append the session outcome to `.heart-memory/sessions/YYYY-MM-DD.md` when working in a concrete project.
+- Update `.heart-memory/artifacts.md`, `.heart-memory/decisions.md`, and `.heart-memory/open-questions.md` if files, design choices, or unresolved facts changed.
 - Re-verify every Never Do item.
 - Check the final code's per-ciphertext level/scale against the Design Note schedule.
 - Confirm all rotation/relin/bootstrap keys used are actually generated.

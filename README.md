@@ -66,6 +66,33 @@ Target aliases:
 
 If no target is specified and the context does not make it obvious, HEart should ask one short target-selection question before proceeding.
 
+## Delegate Memory Module
+
+When HEart starts work on a concrete project, it should maintain a project-local delegate memory folder:
+
+```text
+.heart-memory/
+  README.md
+  project.md
+  rules.md
+  sessions/YYYY-MM-DD.md
+  decisions.md
+  artifacts.md
+  open-questions.md
+```
+
+Initialize it with:
+
+```powershell
+HEart/scripts/init-heart-memory.ps1 `
+  -ProjectRoot <your-project-root> `
+  -ProjectSlug <project-slug> `
+  -TargetLibrary OpenFHE `
+  -ProjectSummary "encrypted logistic regression inference"
+```
+
+Use it as an append-only working log for basic project information, project-specific rules, decisions, changed files, unresolved facts, validation results, and follow-up tasks. This keeps project memory beside the project, while HEart core/libs stay reusable and unchanged.
+
 ## Minimal Example
 
 User:
