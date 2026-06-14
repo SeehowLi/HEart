@@ -47,6 +47,32 @@ Attach or install the `HEart/` directory as a Codex skill. Trigger it with CKKS/
 
 If the target library is ambiguous, the skill should ask one short target-selection question before loading library-specific guidance.
 
+## Minimal Example
+
+User:
+
+```text
+Use HEart to design CKKS inference for logistic regression on an encrypted vector.
+Target OpenFHE CPU.
+```
+
+Expected HEart behavior:
+
+```text
+Chosen target: OpenFHE 1.5.1 / CPU / C++.
+
+Design Note:
+1. Function: f(x)=sigmoid(<w,x>+b), encrypted x, plaintext w/b, encrypted probability output.
+2. Circuit: ct-pt multiply, rotate-and-sum dot product, add plaintext bias, polynomial sigmoid approximation.
+3. Packing: x[i] in slot i; rotations are powers of two for the slot sum, e.g. {1,2,4} for 8 features.
+4. Parameters: choose N, scale, prime chain, slots, and 128-bit security for the depth; decide whether bootstrap is needed.
+5. Keys: relin key if the chosen sigmoid circuit uses ciphertext products, rotation keys for the sum, bootstrap keys only if planned.
+
+Please confirm this Design Note before I write code.
+```
+
+After confirmation, HEart should generate code with explicit level/scale tracking and a plaintext reference that reports slotwise max absolute/relative error.
+
 ## Mandatory CKKS Workflow
 
 Before implementation, HEart requires a user-visible Design Note:

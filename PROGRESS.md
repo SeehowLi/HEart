@@ -405,3 +405,18 @@ Remaining / uncertain:
 - FlyHE/Phantom 语义版本号仍需人工确认；本地 README/CMake 未声明。
 - Project Registry 中的 test-derived project rows 是否保留为 v1.1 示例，仍待人工决定。
 - FlyHE runtime 未在 CUDA/nvcc 环境下编译运行验证。
+
+## 2026-06-14 - README usage example added
+
+完成步骤:
+- 在根目录 `README.md` 的 `Using The Skill` 后新增 `Minimal Example`。
+- 示例展示用户如何指定 HEart + OpenFHE CPU 目标，以及 HEart 应先输出 Design Note 并等待确认，再生成代码。
+- 重新检查 Markdown 相对链接。
+- 提交并推送 README 更新到 GitHub。
+
+产出文件清单:
+- README.md
+- PROGRESS.md
+
+遗留/不确定点:
+- 本次未改动 `v1.0` tag；这是 v1.0 发布后的 README 文档补充提交。
