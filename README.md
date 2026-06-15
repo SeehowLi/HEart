@@ -66,6 +66,8 @@ Target aliases:
 
 If no target is specified and the context does not make it obvious, HEart should ask one short target-selection question before proceeding.
 
+For a step-by-step test-code tutorial, see [HEart/USAGE.md](HEart/USAGE.md).
+
 ## Delegate Memory Module
 
 When HEart starts work on a concrete project, it should maintain a project-local delegate memory folder:

@@ -476,3 +476,19 @@ Remaining / uncertain:
 
 遗留/不确定点:
 - Star History 图表由外部服务 `api.star-history.com` 渲染，显示效果依赖该服务可用性。
+
+## 2026-06-15 - HEart usage tutorial added
+
+完成步骤:
+- 创建 `HEart/USAGE.md`，作为面向新测试代码的实战教程。
+- 教程覆盖 target 选择、project slug、Design Note 门控、OpenFHE/Lattigo/FlyHE 三种调用模板、项目记忆模块和最小可用测试提示。
+- 在根目录 `README.md` 增加到 `HEart/USAGE.md` 的跳转链接。
+- 为继续保持仓库可追踪性，更新 `PROGRESS.md`。
+
+产出文件清单:
+- HEart/USAGE.md
+- README.md
+- PROGRESS.md
+
+遗留/不确定点:
+- 如果你要把这个教程当成固定入口，我可以下一步把 `README.md` 再压缩成“入口页 + USAGE”两层结构。
